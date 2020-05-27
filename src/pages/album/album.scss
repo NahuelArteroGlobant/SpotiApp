@@ -1,0 +1,27 @@
+.container-album {
+  margin-top: 10%;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 80%;
+
+  &__list {
+    margin-top: 35px;
+  }
+
+  &__list--menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  &__list--items {
+    a {
+      text-decoration: none;
+      margin: 0px 0px 0px 10px;
+    }
+  }
+  &__list--items--p {
+    margin: 0px 0px 0px 10px;
+  }
+}

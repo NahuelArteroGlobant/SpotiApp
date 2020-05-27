@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.scss";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/home/home";
+import ArtistsLists from "./pages/artistsLists/artistsLists";
+import Artist from "./pages/artist/artist";
+import Album from "./pages/album/album";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/artistsLists/:id" component={ArtistsLists} />
+        <Route path="/artist/:id" component={Artist} />
+        <Route path="/album/:id" component={Album} />
+        {/* <Route path="" component={Error} /> */}
+      </Switch>
+    </Router>
   );
 }
 
 export default App;
+
+//Client ID c43f1354564140aebf2cf25645ad1dad

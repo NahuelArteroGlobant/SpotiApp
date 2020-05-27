@@ -1,0 +1,29 @@
+.container-headerSearch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10%;
+  background-color: #111;
+  padding: 10px;
+  opacity: 0.5;
+
+  &__input {
+    width: 98%;
+    height: 20%;
+    z-index: 1;
+    background: #383737;
+    padding: 10px 10px 10px 10px;
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+  }
+  &__logo {
+    justify-content: space-between;
+  }
+}
+.container-headerSearch__logo--img {
+  width: 15%;
+  height: auto;
+  margin: auto;
+}

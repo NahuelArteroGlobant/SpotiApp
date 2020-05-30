@@ -1,14 +1,17 @@
 import React from "react";
-import "./home.scss";
-import Search from "../../components/search/search";
-import AuthService from "../../service/auth";
-import LayoutHome from "../../components/layouts/layoutHome/layoutHome";
-import FavoriteCards from "../../components/cards/favoriteCards/favoriteCards";
 import { Link } from "react-router-dom";
 
-const Home = (props) => {
+import "./home.scss";
+
+import AuthService from "../../service/auth";
+
+import FavoriteCards from "../../components/cards/favoriteCards/favoriteCards";
+import LayoutHome from "../../components/layouts/layoutHome/layoutHome";
+import Search from "../../components/search/search";
+
+const Home = ( props ) => {
   AuthService();
-  //console.log("props: ", props);
+
   return (
     <LayoutHome>
       <main className="container-home">
@@ -19,26 +22,27 @@ const Home = (props) => {
           name in the following search box and enjoy!
         </p>
         <div>
-          <Search props={props} />
+          <Search props= { props } />
         </div>
       </main>
       <section className="container-home__cards">
         <ul className="artists">
-          {props.artists &&
-            props.artists.map((art) => {
-              return (
-                <li key={art.id} className="artistsHC">
-                  <Link to={`/artistsLists/${art.id}`}></Link>
-                </li>
-              );
-            })}
+          { props.artists &&
+              props.artists.map( (artist) => {
+                return (
+                  <li key= { artist.id } className="artistsHC">
+                    <Link to={`/artistsLists/${artist.id}`} />
+                  </li>
+                );
+              })
+          }
         </ul>
-        <h1>Favotirte Songs</h1>
-
+        <h1>Favourite Songs</h1>
         <FavoriteCards />
         <FavoriteCards />
       </section>
     </LayoutHome>
   );
 };
+
 export default Home;

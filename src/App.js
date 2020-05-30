@@ -10,11 +10,10 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/artistsLists/:id" component={ArtistsLists} />
-        <Route path="/artist/:id" component={Artist} />
-        <Route path="/album/:id" component={Album} />
-        {/* <Route path="" component={Error} /> */}
+        <Route path="/" exact component= { Home } />
+        <Route path="/artistsLists/:id" exact component= { ArtistsLists } />
+        <Route path="/artist/:id" exact component= { Artist } />
+        <Route path="/album/:id" exact component= { Album } />
       </Switch>
     </Router>
   );
